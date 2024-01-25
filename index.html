@@ -10,8 +10,16 @@
     <textarea name="" id="username" cols="30" rows="10"></textarea>
     
     <script>
-        let text=document.getElementById("username");
-        localStorage.getItem('my name',text.value)
+       
+        let text = document.getElementById("username");
+text.addEventListener("keyup", () => {
+    console.log("run");
+    localStorage.setItem('name', text.value);
+    if (localStorage.getItem('name')) {
+        text.value = localStorage.getItem('name');
+    }
+});
+        
     </script>
 </body>
 </html>
